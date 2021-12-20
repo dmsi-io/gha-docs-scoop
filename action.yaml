@@ -25,9 +25,6 @@ runs:
         git config user.name github-actions
       shell: bash
       working-directory: docs-hugo
-    - name: Setup
-      run: rm package.json # Prevent node from erring due to module expectations
-      shell: bash
     - name: Update Docs
       run: node ${{ github.action_path }}/dist/index.js ${{ inputs.repo }}
       shell: bash
