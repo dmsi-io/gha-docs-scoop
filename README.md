@@ -20,6 +20,18 @@ jobs:
       - name: Update Doc
         uses: dmsi-io/gha-docs-scoop@main
         with:
-          repo: ${{ github.event.repository.name }}
           token: ${{ secrets.MY_TOKEN }}
+```
+
+### Optional Params
+
+#### repo
+
+Name of the repo to as it should be listed in the docs site.
+
+Default: ${{ github.event.repository.name }}
+
+```yaml
+with:
+  repo: 'my-special-repo'
 ```
