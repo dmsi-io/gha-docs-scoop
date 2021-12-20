@@ -4,7 +4,8 @@ description: 'Publishes new docs to the internal documentation site'
 inputs:
   repo:
     description: 'The name of the repo running the update process'
-    required: true
+    required: false
+    default: ${{ github.event.repository.name }}
   token:
     description: 'The token used to checkout the docs repo'
     required: true
@@ -24,7 +25,7 @@ runs:
       shell: bash
       working-directory: docs-hugo
     - name: Update Docs
-      run: node ./dist/index.js ${{ inputs.repo }}
+      run: node ${{ github.action_path }}/dist/index.js ${{ inputs.repo }}
       shell: bash
     - name: Commit Changes
       run: |
