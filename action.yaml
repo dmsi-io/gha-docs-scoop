@@ -1,0 +1,38 @@
+name: 'Documentation Publication'
+description: 'Publishes new docs to the internal documentation site'
+
+inputs:
+  repo:
+    description: 'The name of the repo running the update process'
+    required: true
+  token:
+    description: 'The token used to checkout the docs repo'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout Docs
+      uses: actions/checkout@v2
+      with:
+        repo: 'dmsi-io/docs-hugo'
+        token: ${{ inputs.token }}
+    - name: Git Config
+      run: |
+        git config user.email github-actions@github.com
+        git config user.name github-actions
+      shell: bash
+      working-directory: docs-hugo
+    - name: Update Docs
+      run: node ./dist/index.js ${{ inputs.repo }}
+      shell: bash
+    - name: Commit Changes
+      run: |
+        git add .
+        git diff --quiet && git diff --staged --quiet && echo "No changes to commit" || git commit -am "${{ inputs.repo }} doc update from GitHub Actions"
+      shell: bash
+      working-directory: docs-hugo
+    - name: Push Changes
+      run: git push -f
+      shell: bash
+      working-directory: docs-hugo
