@@ -38,6 +38,7 @@ export default (packageName: string) => {
           )}`;
           if (outputDir.endsWith("/"))
             outputDir = outputDir.slice(0, outputDir.length - 1);
+          console.log(`outputDir: ${outputDir}`);
           const paths = outputDir
             // Get all possible directories that may need to be created
             .split("/")
