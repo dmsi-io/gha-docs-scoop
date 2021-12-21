@@ -18,6 +18,7 @@ runs:
       with:
         repo: 'dmsi-io/docs-hugo'
         token: ${{ inputs.token }}
+        path: 'docs-hugo'
     - name: Git Config
       run: |
         git config user.email github-actions@github.com
