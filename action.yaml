@@ -16,7 +16,7 @@ runs:
     - name: Checkout Docs
       uses: actions/checkout@v2
       with:
-        repo: 'dmsi-io/docs-hugo'
+        repository: 'dmsi-io/docs-hugo'
         token: ${{ inputs.token }}
         path: 'docs-hugo'
     - name: Git Config
