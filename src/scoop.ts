@@ -71,13 +71,15 @@ export default (packageName: string) => {
           ) {
             let title = paths[paths.length - 1];
             title = `${title.charAt(0).toUpperCase()}${title.slice(1)}`;
+            console.log('writing to', `./${outputDir}/_index.md`);
             writeFileSync(
-              `${outputDir}/_index.md`,
+              `./${outputDir}/_index.md`,
               getContents(fileName, title)
             );
           } else {
+            console.log('writing to', `./${outputDir}/${fileNameSansPath}`);
             writeFileSync(
-              `${outputDir}/${fileNameSansPath}`,
+              `./${outputDir}/${fileNameSansPath}`,
               getContents(fileName, fileNameSansPath.replace(".md", ""))
             );
           }
