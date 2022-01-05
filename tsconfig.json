@@ -3,13 +3,10 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["dom", "esnext"],
-    "outFile": "./dist/index.js",
     "moduleResolution": "node",
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "baseUrl": ".",
-    "removeComments": true,
     "module": "AMD"
   },
   "include": ["src/*"]
