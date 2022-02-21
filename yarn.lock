@@ -305,10 +305,10 @@
     "@typescript-eslint/types" "4.33.0"
     eslint-visitor-keys "^2.0.0"
 
-"@wedgekit/scripts@^0.4.4":
-  version "0.4.4"
-  resolved "https://registry.yarnpkg.com/@wedgekit/scripts/-/scripts-0.4.4.tgz#8ae3ac3801dceee85bc566f2097c24ccc69a8d3c"
-  integrity sha512-A2en8buV0LXQM6dz4gJ6JueIDAU9qOMCYqMQRs8Tpq3uZKZ5CxxR7NclYNGsT+J9bN8MFytmV+WgTFc3zlyjbA==
+"@wedgekit/scripts@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@wedgekit/scripts/-/scripts-1.0.0.tgz#8204f852512c9807090daf7c8883a1690c2eec1d"
+  integrity sha512-CluATeURi/rjo3SasqabYyMrLuADojqjzYA7bgpzk0hWbte76XtiHngkt6VHjSgCh18sh8Tq16zHiDOSF3XDLQ==
   dependencies:
     chalk "^4.1.1"
     dotenv "^10.0.0"
